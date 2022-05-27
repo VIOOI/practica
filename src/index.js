@@ -8,6 +8,7 @@ import { Layout } from './layout'
 import { Home } from './pages/home'
 import { Gallery } from './pages/gallery'
 import { ImageGallery } from './pages/gallery/image'
+import { Docs } from './pages/documents'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,6 +18,7 @@ root.render(
 				<Route path='/' element={ <Home /> } />
 				<Route path='/gallery' element={ <Gallery /> } />
 				<Route path='/gallery/:id' element={ <ImageGallery /> } />
+				<Route path='/documents' element={ <Docs /> } />
 			</Route>
 		</Routes>
 	</BrowserRouter>
