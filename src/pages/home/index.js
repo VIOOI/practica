@@ -1,28 +1,16 @@
 import { useEffect, useState } from 'react'
-import { supabase } from '../../openDatabase'
 
 import { Section } from '../../components/home/section'
 import { Slider } from '../../components/home/slider'
 
 export const Home = () => {
-	const [ images, setImages ] = useState([])
-	useEffect( () => {
-		( async function fetchData () {
-		let { data: Image, error } = await supabase
-			.from('Image')
-			.select('url,title')
-			.eq('imageRole', 'HOME')
-			setImages(Image)
-		})()
-		document.title = 'Главная';
-	}, [] )
 	return (
 	<> 
 	<div className='w-screen min-h-screen bg-zinc-100 dark:bg-stone-900 flex flex-col justify-start items-center'>
 		<div>
 				<title>Павловская летопись</title>
 		</div>
-		<Slider images={images} />
+		<Slider />
 		<h1 className='text-4xl font-bold text-blue-800 dark:text-blue-500 text-center my-5'>Музей  &quot;Павловская летопись&quot;  <br /> МБОУ  &quot;Павловская СОШ&quot; </h1>
 		<Section title={'О музее'} >
 			<ol className='list-decimal pl-6'>

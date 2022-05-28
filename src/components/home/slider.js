@@ -1,19 +1,31 @@
 import { motion } from 'framer-motion'
 import { useState, useEffect, useRef } from 'react'
+import { supabase } from '../../openDatabase'
 
 
-export const Slider = ({ images }) => {
+export const Slider = () => {
 	const [ width, setWidth ] = useState(0)
+	const [ images, setImages ] = useState([])
 	const carousel = useRef()
 	console.log( images )
+	useEffect( () => {
+		( async function fetchData () {
+		let { data: Image } = await supabase
+			.from('Image')
+			.select('url,title')
+			.eq('imageRole', 'HOME')
+			setImages(Image)
+		})()
+		document.title = 'Главная';
+	}, [] )
 	useEffect(() => {
 			console.log( carousel.current.scrollWidth, carousel.current.offsetWidth )
 			setWidth( carousel.current.scrollWidth - carousel.current.offsetWidth )
-	}, [carousel])
+	}, [images])
 	return(
 		<>
-			<motion.div className="cursor-grab overflow-hidden">
-				<motion.div ref={carousel} className='flex' drag='x' dragConstraints={{ right: 0, left: -width }} >
+			<motion.div ref={carousel} className="cursor-grab overflow-hidden p-10">
+				<motion.div className='flex' drag='x' dragConstraints={{ right: 0, left: -width }} whileTap={{cursor: 'drabbing'}} >
 					{images.map( ( image, index ) => {
 						return(
 							<motion.div key={ index } 
