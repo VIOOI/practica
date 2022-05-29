@@ -7,7 +7,7 @@ export const Slider = () => {
 	const [ width, setWidth ] = useState(0)
 	const [ images, setImages ] = useState([])
 	const carousel = useRef()
-	console.log( images )
+	// console.log( images )
 	useEffect( () => {
 		( async function fetchData () {
 		let { data: Image } = await supabase
@@ -19,7 +19,7 @@ export const Slider = () => {
 		document.title = 'Главная';
 	}, [] )
 	useEffect(() => {
-			console.log( carousel.current.scrollWidth, carousel.current.offsetWidth )
+			// console.log( carousel.current.scrollWidth, carousel.current.offsetWidth )
 			setWidth( carousel.current.scrollWidth - carousel.current.offsetWidth )
 	}, [images])
 	return(

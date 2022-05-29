@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 
 import { Section } from '../../components/home/section'
 import { Slider } from '../../components/home/slider'
 
 export const Home = () => {
+	const user = useSelector( state => state.user )
+	console.log( user )
 	return (
 	<> 
 	<div className='w-screen min-h-screen bg-zinc-100 dark:bg-stone-900 flex flex-col justify-start items-center'>
