@@ -12,6 +12,7 @@ import { Home } from './pages/home'
 
 import { Gallery } from './pages/gallery'
 import { ImageGallery } from './pages/gallery/image'
+import { NewImage } from './pages/gallery/newImage'
 
 import { Docs } from './pages/documents'
 import { NewDocs } from './pages/documents/newDocs'
@@ -29,6 +30,7 @@ root.render(
 
 				<Route path='/gallery' element={ <Gallery /> } />
 				<Route path='/gallery/:id' element={ <ImageGallery /> } />
+				<Route path='/gallery/new' element={ <NewImage /> } />
 
 				<Route path='/documents' element={ <Docs /> } />
 				<Route path='/documents/new' element={ <NewDocs /> } />

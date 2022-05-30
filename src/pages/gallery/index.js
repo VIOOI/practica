@@ -1,10 +1,13 @@
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { supabase } from '../../openDatabase'
+import { useSelector } from 'react-redux'
+import { AiOutlinePlusCircle } from 'react-icons/ai'
 
 export const Gallery = () => {
 	// console.log( imagesProps )
 	const [ images, setImages ] = useState([])
+	const user = useSelector( state => state.user )
 
 	useEffect( () => {
 		( async function fetchData () {
@@ -19,6 +22,14 @@ export const Gallery = () => {
 	}, [] )
 
 	return(
+		<>
+			{
+			user.role !== 'USER' ? (
+				<Link to='/gallery/new' className='fixed top-14 left-5 text-4xl block text-blue-600'>
+					<AiOutlinePlusCircle />
+				</Link>
+			) : null
+			}
 		<div className='w-screen min-h-screen dark:bg-stone-900 flex justify-center'>
 			<div className="grid gap-5 px-4 h-fit
 								xl:grid-cols-4 xl:w-9/12
@@ -38,5 +49,6 @@ export const Gallery = () => {
 			}
 			</div>
 		</div>
+		</>
 	)
 }
