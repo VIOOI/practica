@@ -9,9 +9,13 @@ import './index.css';
 
 import { Layout } from './layout'
 import { Home } from './pages/home'
+
 import { Gallery } from './pages/gallery'
 import { ImageGallery } from './pages/gallery/image'
+
 import { Docs } from './pages/documents'
+import { NewDocs } from './pages/documents/newDocs'
+
 import { Events } from './pages/events'
 import { Event } from './pages/events/id'
 
@@ -22,11 +26,16 @@ root.render(
 		<Routes>
 			<Route path='/' element={ <Layout /> } >
 				<Route path='/' element={ <Home /> } />
+
 				<Route path='/gallery' element={ <Gallery /> } />
 				<Route path='/gallery/:id' element={ <ImageGallery /> } />
+
 				<Route path='/documents' element={ <Docs /> } />
+				<Route path='/documents/new' element={ <NewDocs /> } />
+
 				<Route path='/events' element={ <Events /> } />
 				<Route path='/events/:id' element={ <Event /> } />
+
 			</Route>
 		</Routes>
 	</BrowserRouter>

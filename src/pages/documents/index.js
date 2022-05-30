@@ -1,6 +1,9 @@
 import { BiSearch } from 'react-icons/bi'
 import { useEffect, useState } from 'react'
 import { supabase } from '../../openDatabase'
+import { useSelector } from 'react-redux'
+import { AiOutlinePlusCircle } from 'react-icons/ai'
+import { Link } from 'react-router-dom'
 
 import { Document } from '../../components/documents/document'
 
@@ -10,6 +13,7 @@ export const Docs = () => {
 	const [ value, setValue ] = useState('')
 	const [ isOpen, setIsOpen ] = useState(true)
 
+	const user = useSelector( state => state.user )
 
 	const filteredCountris = docs.filter(doc => {
 		return doc.title.toLowerCase().includes(value.toLowerCase())
@@ -26,11 +30,19 @@ export const Docs = () => {
 				.from('Documents')
 				.select('*')
 			setDocs(documents)
-			console.log( documents )
+			// console.log( documents )
 		})();
 		},[] )
 
 	return(
+		<>
+			{
+			user.role !== 'USER' ? (
+				<Link to='/documents/new' className='fixed top-28 left-5 text-4xl block text-blue-600'>
+					<AiOutlinePlusCircle />
+				</Link>
+			) : null
+			}
 		<div className='flex flex-col items-center gap-3 dark:bg-stone-900' style={{ minHeight: '96vh' }}>
 			<form action="#" className='sticky z-20 top-10 w-screen dark:bg-stone-800 p-2 flex gap-2 justify-center items-center'>
 				<BiSearch className='text-2xl dark:text-white'/>
@@ -58,7 +70,7 @@ export const Docs = () => {
 			<h1 className='text-4xl font-bold mt-16 text-blue-800 dark:text-blue-500 text-center my-5'>Документы музея</h1>
 				{
 				filteredCountris.map( doc => {
-				console.log( doc )
+				// console.log( doc )
 					return(
 						<Document key={doc.id} url={doc.url} title={doc.title} discription={doc.description}
 							type={doc.documentType} date={doc.createdAt} author={doc.authorId}
@@ -67,6 +79,6 @@ export const Docs = () => {
 				})
 				}
 		</div>
-			
+		</>
 	)
 }
