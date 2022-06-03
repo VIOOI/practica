@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { useState, useEffect, useRef } from 'react'
 import { supabase } from '../../openDatabase'
 
-export const Slider = ({ id=1 }) => {
+export const Slider = ({ id }) => {
 	const [ images, setImages ] = useState([])
 
 	useEffect( () => {
@@ -11,14 +11,14 @@ export const Slider = ({ id=1 }) => {
 				.from('ImagesOnEvents')
 				.select('*')
 				.eq( 'eventsId', `${id}` )
-			// console.log( ImagesOnEvents )
+			console.log( ImagesOnEvents )
 
 			for ( let imgid of ImagesOnEvents ) {
 				let { data: Image } = await supabase
 					.from('Image')
 					.select('*')
 					.eq( 'id', imgid.imagesId)
-				console.log( Image )
+				// console.log( Image )
 				setImages( prev => {
 					return [...prev, Image[0]]
 				} )

@@ -19,6 +19,7 @@ import { NewDocs } from './pages/documents/newDocs'
 
 import { Events } from './pages/events'
 import { Event } from './pages/events/id'
+import { NewEvents } from './pages/events/newEvents'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -37,6 +38,7 @@ root.render(
 
 				<Route path='/events' element={ <Events /> } />
 				<Route path='/events/:id' element={ <Event /> } />
+				<Route path='/events/new' element={ <NewEvents /> } />
 
 			</Route>
 		</Routes>

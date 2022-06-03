@@ -4,6 +4,7 @@ import { supabase } from '../../openDatabase'
 
 export const Card = ({ data }) => {
 	const [ images, setImages ] = useState({})
+	console.log( data )
 	useEffect( () => {
 		( async function fetchData () {
 			let { data: ImagesOnEvents } = await supabase

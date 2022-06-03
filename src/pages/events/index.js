@@ -1,10 +1,14 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '../../openDatabase'
+import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 import { Card } from '../../components/events/card'
+import { AiOutlinePlusCircle } from 'react-icons/ai'
 
 export const Events = () => {
 	const [ mock, setMock ] = useState([])
+	const user = useSelector( state => state.user )
 	useEffect( () => {
 		( async function fetchData () {
 		let { data } = await supabase
@@ -16,6 +20,14 @@ export const Events = () => {
 	}, [] )
 
 	return(
+		<>
+			{
+			user.role !== 'USER' ? (
+				<Link to='/events/new' className='fixed top-14 left-5 text-4xl block text-blue-600'>
+					<AiOutlinePlusCircle />
+				</Link>
+			) : null
+			}
 		<div className='dark:bg-stone-900'>
 			<div className='flex justify-start gap-x-3 pt-3 pb-0 px-3 w-9/12 mx-auto'>
 			</div>
@@ -34,5 +46,6 @@ export const Events = () => {
 		</div>
 			</div>
 		</div>
+		</>
 	)
 }
