@@ -80,7 +80,7 @@ export const Account = () => {
 							{ errorSignIn }
 							<input type="text" className='py-1 px-3 mx-5 w-5/12 text-black placeholder:text-xs rounded-[5px]' placeholder='Login' />
 							<input type="password"  className='py-1 px-3 mx-5 w-5/12 text-black placeholder:text-xs rounded-[5px]' placeholder='Password'/>
-							<button>Войти</button>
+							<button className='px-7 py-2 bg-blue-500 rounded-md'>Войти</button>
 						</form>
 				</div>
 			) : null
