@@ -32,7 +32,7 @@ export const Account = () => {
 			)
 		} else {
 			setError(
-		<div className='p-3 w-6/12 text-red-400 text-xl text-center'>
+		<div className='p-5 w-5/12 text-white bg-red-500 rounded-lg text-xl text-center'>
 			Не верный логин или пароль
 		</div>
 			)
