@@ -26,7 +26,7 @@ export const Account = () => {
 			dispath(signIn( data[0] ))
 			setIsOpen(false)
 			setError(
-		<div className='p-3 w-6/12 text-white text-xl text-center'>
+		<div className='p-3 w-6/12 text-stone-800 dark:text-white text-xl text-center'>
 			Войти
 		</div>
 			)
@@ -68,7 +68,7 @@ export const Account = () => {
 			? (
 				<div className='fixed top-0 left-0 h-screen w-screen flex justify-start' >
 						<form 
-							className='flex flex-col justify-center items-center gap-y-3 lg:p-5 rounded-md bg-stone-800 lg:w-6/12'
+							className='flex flex-col justify-center items-center gap-y-3 lg:p-5 rounded-md bg-zinc-100 dark:bg-stone-800 lg:w-6/12'
 							onSubmit={( event ) => {
 								event.preventDefault()
 								signInBD({ 
