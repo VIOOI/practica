@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 
 import { Section } from '../../components/home/section'
@@ -34,9 +34,9 @@ export const Home = () => {
 				<div className='w-6/12 p-3 rounded-md'>
 					<dl>
 						<dt className='text-xs text-gray-400'>Адрес электронной почты</dt>
-							<dd className=''>sanpavl52@mail.ru</dd>
+							<dd className=''><a href="mailto:sanpavl52@mail.ru"> sanpavl52@mail.ru <span className='inline-block bg-stone-800 rounded-md p-1 text-sm '>Написать</span></a></dd>
 						<dt className='text-xs text-gray-400'>Контактный телефон</dt>
-							<dd>49231 72848</dd>
+							<dd><a href="tel:+49231 72848"> 49231 72848 <span className='inline-block bg-stone-800 rounded-md p-1 text-sm '>Позвонить</span></a></dd>
 					</dl>
 				</div>
 			</div>

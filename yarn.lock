@@ -8605,6 +8605,11 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
+use-match-media-hook@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/use-match-media-hook/-/use-match-media-hook-1.0.1.tgz#fe0b14d08f8518b6a4754186bb45733cec8f60a5"
+  integrity sha512-ZNHKyJeGVBSaOGVgPL19+W3p5d7Tx9O28cG04jKW3yKKrEHq3eTyLnGyLrgGWFkGX1xGWeRKjBUhdpti16/Z/w==
+
 use-sync-external-store@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.1.0.tgz#3343c3fe7f7e404db70f8c687adf5c1652d34e82"
