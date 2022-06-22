@@ -33,7 +33,7 @@ export const Menu = () => {
 			<div 
 				className='p-0 rounded-md flex justify-center items-center m-0'>
 				<ul className='flex gap-3'>
-					<MenuItem icon={<BiHomeAlt />} text='Домашняя' href={'/'}/>
+					<MenuItem icon={<BiHomeAlt />} text='Главная' href={'/'}/>
 					<MenuItem icon={<BiBookBookmark />} text='Документы' href={'/documents'} />
 					<MenuItem icon={<BiImageAlt />} text='Галерея' href={'/gallery'} />
 					<MenuItem icon={<BiCalendarEvent />} text='Мероприятия' href={'/events'} />
