@@ -44,7 +44,7 @@ export const Docs = () => {
 			) : null
 			}
 		<div className='flex flex-col items-center gap-3 dark:bg-stone-900' style={{ minHeight: '96vh' }}>
-			<form action="#" className='sticky z-20 top-10 w-screen dark:bg-stone-800 p-2 flex gap-2 justify-center items-center'>
+			<form action="#" className='sticky z-20 top-10 w-screen bg-zinc-100 dark:bg-stone-800 p-2 flex gap-2 justify-center items-center'>
 				<BiSearch className='text-2xl dark:text-white'/>
 				<input type="text" 
 					className='border-0 px-4 py-1 rounded-md dark:bg-stone-900 dark:text-white 
@@ -54,7 +54,7 @@ export const Docs = () => {
 					onChange={event => setValue( event.target.value )}
 					onClick={() => { setIsOpen(true) }}
 				/>
-				<ul className='rounded-b-md dark:text-white absolute left-1/3 top-12 w-4/12 dark:bg-stone-800 shadow-lg z-40 max-h-56 h-auto overflow-auto'>
+				<ul className='rounded-b-md dark:text-white absolute left-1/3 top-12 w-4/12 bg-white dark:bg-stone-800 shadow-lg z-40 max-h-56 h-auto overflow-auto'>
 					{
 					value && isOpen
 						? filteredCountris.map( doc => {
