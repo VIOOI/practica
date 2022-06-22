@@ -59,8 +59,8 @@ export const NewEvents = () => {
 				setImgArr={setImgArr} 
 				imgArr={imgArr} 
 			/>
-	<div className="min-h-screen w-screen bg-stone-800 flex"> 
-			<div className="w-5/12 min-h-screen flex flex-col gap-2 justify-center items-center relative">
+	<div className="min-h-screen w-screen bg-zinc-100 dark:bg-stone-800 flex"> 
+			<div className="w-5/12 min-h-screen flex flex-col gap-2 text-blue-500 justify-center items-center relative">
 					<div 
 						onClick={ () => { setIsOpen(true) } }
 						className='text-md cursor-pointer text-white flex items-center gap-2'
@@ -100,10 +100,9 @@ export const NewEvents = () => {
 			</div>
 			<div className="w-7/12 h-screen flex justify-center items-center">
 				<div className="max-w-sm rounded-md overflow-hidden shadow-lg bg-zinc-300 cursor-pointer dark:bg-stone-800">
-					<img className="w-full" src={ 'https://i.ytimg.com/vi/qz6j-35yQog/maxresdefault.jpg?7857057827' }alt={ title }/>
 					<div className="px-6 py-4">
 						<div className="font-bold text-xl mb-2 dark:text-white">{ title }</div>
-						<p className="text-gray-700 text-base dark:text-white">
+						<p className="text-gray-700 text-base dark:text-white whitespace-normal">
 							{ desc.slice( 1, 200 ) + '...' }
 						</p>
 					</div>
@@ -114,3 +113,4 @@ export const NewEvents = () => {
 	)
 }
 
+					// <img className="w-full" src={ 'https://i.ytimg.com/vi/qz6j-35yQog/maxresdefault.jpg?7857057827' }alt={ title }/>

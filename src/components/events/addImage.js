@@ -11,7 +11,7 @@ export const AddImage = ({ isOpen, setIsOpen, setImgArr, imgArr }) => {
 
 	if ( isOpen ) {
 	return (
-	<div className="min-h-screen w-screen bg-stone-800 flex"> 
+	<div className="min-h-screen w-screen bg-zinc-100 dark:bg-stone-800 flex"> 
 			<div className="w-5/12 min-h-screen flex flex-col gap-2 justify-center items-center relative">
 				<form 
 					className="flex flex-col w-7/12 gap-y-3" 

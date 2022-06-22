@@ -17,7 +17,7 @@ export const NewImage = () => {
 		return <Navigate to='/gallery' replace={true} />
 	}
 	return (
-	<div className="h-screen w-screen bg-stone-800 flex"> 
+	<div className="min-h-screen w-screen bg-zinc-100 dark:bg-stone-800 flex"> 
 			<div className="w-5/12 h-screen flex justify-center items-center">
 				<form 
 					className="flex flex-col w-7/12 gap-y-3" 
